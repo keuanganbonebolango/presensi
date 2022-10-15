@@ -8,9 +8,9 @@
         <!-- /.login-logo -->
         <div class="card">
             @if (session('status'))
-            <div class="alert alert-success" role="alert">
-                {{ session('status') }}
-            </div>
+                <div class="alert alert-success" role="alert">
+                    {{ session('status') }}
+                </div>
             @endif
             <div class="card-body login-card-body">
                 <p class="login-box-msg">You forgot your password? Here you can easily retrieve a new password.</p>
@@ -26,9 +26,9 @@
                             </div>
                         </div>
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                     </div>
                     <div class="row">

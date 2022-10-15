@@ -24,10 +24,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{ url('/attendance') }}" class="nav-link">
+                <a href="{{ url('/presensi') }}" class="nav-link">
                     <i class="nav-icon far fa-calendar-alt"></i>
                     <p>
-                        Attendance
+                        Presensi
                     </p>
                 </a>
             </li>
@@ -41,7 +41,8 @@
             </li>
             <li class="nav-header">LABELS</li>
             <li class="nav-item">
-                <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault();
+                <a href="{{ route('logout') }}" class="nav-link"
+                    onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="nav-icon far fa-circle text-danger"></i>
                     <p class="text">Logout</p>

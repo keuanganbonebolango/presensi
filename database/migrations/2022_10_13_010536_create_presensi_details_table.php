@@ -19,7 +19,7 @@ class CreatePresensiDetailsTable extends Migration
             $table->string('long');
             $table->string('lat');
             $table->string('alamat');
-            $table->string('gambar_presensi');
+            $table->string('photo');
             $table->enum('type', ['in', 'out']);
             $table->timestamps();
         });

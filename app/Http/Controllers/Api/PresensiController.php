@@ -27,10 +27,11 @@ class PresensiController extends Controller
             'lat' => ['required'],
             'alamat' => ['required'],
             'type' => ['in:in,out', 'required'],
-            'gambar_presensi' => ['required']
+            'photo' => ['required']
         ]);
 
-        $gambar_presensi = $request->file('gambar_presensi');
+        $photo = $request->file('photo');
+        // dd($photo);
         $presensiType = $request->type;
         $userPresensiToday = $request->user()
             ->presensi()
@@ -55,7 +56,7 @@ class PresensiController extends Controller
                         'type' => 'in',
                         'long' => $request->long,
                         'lat' => $request->lat,
-                        'gambar_presensi' => $this->uploadImage($gambar_presensi, $request->user()->name, 'presensi'),
+                        'photo' => $this->uploadImage($photo, $request->user()->name, 'presensi'),
                         'alamat' => $request->alamat
                     ]
                 );
@@ -100,7 +101,7 @@ class PresensiController extends Controller
                         'type' => 'out',
                         'long' => $request->long,
                         'lat' => $request->lat,
-                        'gambar_presensi' => $this->uploadImage($gambar_presensi, $request->user()->name, 'presensi'),
+                        'photo' => $this->uploadImage($photo, $request->user()->name, 'presensi'),
                         'alamat' => $request->alamat
                     ]
                 );

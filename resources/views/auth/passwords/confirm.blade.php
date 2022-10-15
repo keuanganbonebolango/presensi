@@ -7,7 +7,7 @@
         </div>
         <!-- /.login-logo -->
         <div class="card">
-            <div class="card-body login-card-body">    
+            <div class="card-body login-card-body">
                 <p class="login-box-msg">Please confirm your password before continuing.</p>
 
                 <form method="POST" action="{{ route('password.confirm') }}">
@@ -22,9 +22,9 @@
                             </div>
                         </div>
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
                         @enderror
                     </div>
                     <!-- /.col -->
@@ -33,11 +33,11 @@
                     </div>
                     <!-- /.col -->
                 </form>
-    
+
                 @if (Route::has('password.request'))
-                <p class="mb-1">
-                    <a href="{{ route('password.request') }}">Forgot Your Password?</a>
-                </p>
+                    <p class="mb-1">
+                        <a href="{{ route('password.request') }}">Forgot Your Password?</a>
+                    </p>
                 @endif
             </div>
             <!-- /.login-card-body -->

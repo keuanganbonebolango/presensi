@@ -12,35 +12,35 @@ use Illuminate\Support\Str;
 trait ImageStorage
 {
     /**
-     * For Upload gambar_profil
-     * @param mixed $gambar_profil
+     * For Upload photo
+     * @param mixed $photo
      * @param mixed $name
      * @param mixed $path
      * @param bool $update
-     * @param mixed|null $old_gambar_profil
+     * @param mixed|null $old_photo
      * @return void
      */
-    public function uploadImage($gambar_profil, $name, $path, $update = false, $old_gambar_profil = null)
+    public function uploadImage($photo, $name, $path, $update = false, $old_photo = null)
     {
         if ($update) {
-            Storage::delete("/public/{$path}/" . $old_gambar_profil);
+            Storage::delete("/public/{$path}/" . $old_photo);
         }
-
         $name = Str::slug($name) . '-' . time();
-        $extension = $gambar_profil->getClientOriginalExtension();
+        // dd($name);
+        $extension = $photo->getClientOriginalExtension();
         $newName = $name . '.' . $extension;
-        Storage::putFileAs("/public/{$path}", $gambar_profil, $newName);
+        Storage::putFileAs("/public/{$path}", $photo, $newName);
         return $newName;
     }
 
     /**
      *
-     * @param mixed $old_gambar_profil
+     * @param mixed $old_photo
      * @param mixed $path
      * @return void
      */
-    public function deleteImage($old_gambar_profil, $path)
+    public function deleteImage($old_photo, $path)
     {
-        Storage::delete("/public/{$path}" . $old_gambar_profil);
+        Storage::delete("/public/{$path}" . $old_photo);
     }
 }
